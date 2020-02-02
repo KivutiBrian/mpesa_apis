@@ -2,6 +2,6 @@
 
 An API created (using flask rest-plus) to consume the safaricom daraja APIs and includes STK push, C2B
 
-Login_in Page
+
 
 ![](swagger.PNG)
