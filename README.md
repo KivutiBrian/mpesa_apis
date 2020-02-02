@@ -38,6 +38,24 @@ pip install - r requirements.txt
 
 5.To run the app,
 
+```
+Before you can run the application successfully, navigate to the constants.py file and fill in your test credentials
+
+consumer_keyy = ''
+consumer_secrett = ''
+
+BusinessShortCode = '' #should be the lipa na mpesa online shortcode provide on test credentials
+LipaNaMpesaPassKey = ''
+
+shortcode = "" #shortcode 1
+
+# the urls to be used in the c2b register urls
+validationUrl = ''
+confirmationUrl = ''
+
+
+```
+
 For windows
 ```
 cd app
