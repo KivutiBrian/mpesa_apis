@@ -6,7 +6,8 @@ An API created (using flask rest-plus) to consume the safaricom daraja APIs and 
 
 1.Clone Repo
 
-```https://github.com/KivutiBrian/mpesa_apis.git
+```
+https://github.com/KivutiBrian/mpesa_apis.git
 ```
 
 2.Create Virtual Environment folder
