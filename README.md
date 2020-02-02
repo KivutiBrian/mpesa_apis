@@ -36,11 +36,9 @@ env\Scripts\activate.bat
 pip install - r requirements.txt
 ```
 
-5.To run the app,
+5.Before you can run the application successfully, navigate to the constants.py file and fill in your test credentials,
 
 ```
-Before you can run the application successfully, navigate to the constants.py file and fill in your test credentials
-
 consumer_keyy = ''
 consumer_secrett = ''
 
@@ -55,6 +53,7 @@ confirmationUrl = ''
 
 
 ```
+After updating the code above, to run the code
 
 For windows
 ```
