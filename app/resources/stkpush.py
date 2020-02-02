@@ -15,9 +15,11 @@ ns_stkpush = api.namespace('stkpush', description="MPESA STK PUSH")
 @ns_stkpush.route('')
 class Stkpush(Resource):
     
-    """Use this API to initiate online payment on behalf of a customer."""
+    
     def post(self):
     
+        """Use this API endpoint to initiate online payment on behalf of a customer."""
+        
         access_token = accessToken.gerated_access_token
         api_url = "https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest"
         headers = { "Authorization": "Bearer %s" % access_token }
@@ -29,8 +31,8 @@ class Stkpush(Resource):
             "Amount": "1",
             "PartyA": "254705275702",
             "PartyB": constants.BusinessShortCode,
-            "PhoneNumber": "254705275702",
-            "CallBackURL": "https://test.com",
+            "PhoneNumber": "", #pass in the phone number that will be prompted to enter the pin
+            "CallBackURL": "https://test.com", #pass in an actual callback url if you have one
             "AccountReference": "Test100",
             "TransactionDesc": "Test payment"
         }

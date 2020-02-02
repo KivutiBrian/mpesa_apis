@@ -7,3 +7,9 @@ BusinessShortCode = '' #should be the lipa na mpesa online shortcode provide on 
 LipaNaMpesaPassKey = ''
 
 shortcode = "" #shortcode 1
+
+# the urls to be used in the c2b register urls
+validationUrl = ''
+confirmationUrl = ''
+
+
