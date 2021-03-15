@@ -29,7 +29,7 @@ class Stkpush(Resource):
             "Timestamp": generated_timestamp,
             "TransactionType": "CustomerPayBillOnline",
             "Amount": "1",
-            "PartyA": "254705275702",
+            "PartyA": "",
             "PartyB": constants.BusinessShortCode,
             "PhoneNumber": "", #pass in the phone number that will be prompted to enter the pin
             "CallBackURL": "https://test.com", #pass in an actual callback url if you have one
