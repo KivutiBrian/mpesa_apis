@@ -36,36 +36,32 @@ env\Scripts\activate.bat
 pip install - r requirements.txt
 ```
 
-5.Before you can run the application successfully, navigate to the constants.py file and fill in your test credentials,
+5.Before you can run the application successfully, you need to have environment variable. create a .env file with the following values,
 
 ```
-consumer_keyy = ''
-consumer_secrett = ''
-
-BusinessShortCode = '' #should be the lipa na mpesa online shortcode provide on test credentials
-LipaNaMpesaPassKey = ''
-
-shortcode = "" #shortcode 1
-
-# the urls to be used in the c2b register urls
-validationUrl = ''
-confirmationUrl = ''
-
+consumer_key
+consumer_secret
+BusinessShortCode
+LipaNaMpesaPassKey
+test_msisdn
+shortcode
+validationUrl
+confirmationUrl
 
 ```
-After updating the code above, to run the code
+To run the code
 
 For windows
 ```
-cd app
 set FLASK_APP=main.py
+set FLASK_ENV=development
 flask run
 ```
 
 For Linux systems and MAC
 ```
-cd app
 export FLASK_APP=main.py
+export FLASK_ENV=development
 flask run
 ```
 
