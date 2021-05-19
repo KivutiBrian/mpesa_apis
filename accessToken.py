@@ -2,10 +2,6 @@ import requests
 import os
 from requests.auth import HTTPBasicAuth
 
-import constants
-
-
-
 def access_token():
     
     consumer_key = os.environ.get("consumer_key")

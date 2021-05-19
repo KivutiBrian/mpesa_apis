@@ -22,7 +22,7 @@ python -m venv env
 For Linux systems and MAC
 
 ```
-source env/bin/avtivate
+source env/bin/activate
 ```
 
 For Windows
@@ -33,7 +33,7 @@ env\Scripts\activate.bat
 
 4.Install requierements
 ```
-pip install - r requirements.txt
+pip install -r requirements.txt
 ```
 
 5.Before you can run the application successfully, you need to have environment variable. create a .env file with the following keys and add values to them,

@@ -5,13 +5,10 @@ import os
 import requests
 import json
 
-
-import constants #file containing the business short code
-
-
+# create a namespace
 ns_c2b = api.namespace('c2b', description="MPESA c2b")
 
-
+# describe the payload expected
 sim_transaction = api.model('Sim',{
     "amount":fields.Integer,
     "msisdn":fields.String,
