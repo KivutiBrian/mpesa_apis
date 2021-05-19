@@ -1,8 +1,11 @@
 from main import api,Resource,fields
+from accessToken import token
+
+import os
 import requests
 import json
 
-import accessToken #file containing the generated access token
+
 import constants #file containing the business short code
 
 
@@ -23,13 +26,13 @@ class C2b(Resource):
     def post(self):
         """Use this API endpoint to register validation and confirmation URLs on M-Pesa"""
 
-        access_token = accessToken.gerated_access_token
+        access_token = token
         api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/registerurl"
         headers = {"Authorization": "Bearer %s" % access_token}
-        request = { "ShortCode": constants.BusinessShortCode, #the shortcode is the shortcode 1 on the test credential
+        request = { "ShortCode": os.environ.get("BusinessShortCode"), #the shortcode is the shortcode 1 on the test credential
             "ResponseType": "Confirmed",
-            "ConfirmationURL": constants.confirmationUrl,
-            "ValidationURL": constants.validationUrl}
+            "ConfirmationURL": os.environ.get("confirmationUrl"),
+            "ValidationURL": os.environ.get("validationUrl")}
         
         response = requests.post(api_url, json = request, headers=headers)
         
@@ -84,10 +87,10 @@ class C2bSimulateTransaction(Resource):
 
         data = api.payload
 
-        access_token = accessToken.gerated_access_token
+        access_token = token
         api_url = "https://sandbox.safaricom.co.ke/mpesa/c2b/v1/simulate"
         headers = {"Authorization": "Bearer %s" % access_token}
-        request = { "ShortCode": constants.shortcode,
+        request = { "ShortCode": os.environ.get("shortcode"),
             "CommandID":"CustomerPayBillOnline",
             "Amount":data['amount'],
             "Msisdn":data['msisdn'],

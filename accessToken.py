@@ -1,21 +1,24 @@
 import requests
+import os
 from requests.auth import HTTPBasicAuth
+
 import constants
 
 
-def generate_access_token():
+
+def access_token():
     
-    consumer_key = constants.consumer_keyy
-    consumer_secret = constants.consumer_secrett
+    consumer_key = os.environ.get("consumer_key")
+    consumer_secret = os.environ.get("consumer_secret")
+
     api_URL = "https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials"
     
     r = requests.get(api_URL, auth=HTTPBasicAuth(consumer_key, consumer_secret))
-    #get the response in json format 
-    access_token  = r.json()
-
-    return access_token['access_token']
+    
+    the_token = r.json()['access_token']
+    return the_token
 
 # store the access token that has been generated in a new variable 
-gerated_access_token = generate_access_token()
+# gerated_access_token = generate_access_token()
     
-
+token = access_token()
